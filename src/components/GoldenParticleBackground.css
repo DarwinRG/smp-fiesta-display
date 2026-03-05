@@ -1,0 +1,34 @@
+.golden-particle-background {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.golden-particle {
+  position: absolute;
+  border-radius: 1px;
+  transform-origin: center;
+  animation: golden-particle-float ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes golden-particle-float {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(var(--r, 0deg));
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(3px, -4px) rotate(var(--r, 0deg));
+    opacity: 0.85;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .golden-particle {
+    animation: none;
+    opacity: 0.7;
+  }
+}
