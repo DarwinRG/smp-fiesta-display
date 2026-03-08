@@ -26,9 +26,3 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .golden-particle {
-    animation: none;
-    opacity: 0.7;
-  }
-}

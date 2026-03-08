@@ -36,6 +36,19 @@ function App() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [goToNext, goToPrev]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      const scaleX = window.innerWidth / 1920;
+      const scaleY = window.innerHeight / 1080;
+      const scale = Math.min(scaleX, scaleY);
+      document.documentElement.style.setProperty('--app-scale', scale.toString());
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className="app-container">
       <EventSlide key={currentEvent.id} event={currentEvent} />

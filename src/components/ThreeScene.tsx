@@ -22,8 +22,6 @@ function ThreeScene({ themeKey, accentColor }: ThreeSceneProps) {
     const container = containerRef.current;
     if (!container) return;
 
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
     const width = container.clientWidth;
     const height = container.clientHeight;
 
@@ -60,7 +58,7 @@ function ThreeScene({ themeKey, accentColor }: ThreeSceneProps) {
       animationIdRef.current = requestAnimationFrame(animate);
       const delta = clock.getDelta();
 
-      if (updateFnRef.current && !prefersReducedMotion) {
+      if (updateFnRef.current) {
         updateFnRef.current(delta * 0.3);
       }
 

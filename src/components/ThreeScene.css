@@ -28,9 +28,3 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .three-scene-fallback {
-    animation: none;
-    background-size: 100% 100%;
-  }
-}
