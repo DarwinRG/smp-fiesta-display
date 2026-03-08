@@ -58,6 +58,10 @@ function App() {
         onNext={goToNext}
         onPrev={goToPrev}
       />
+      <div className="app-footer">
+        <span className="made-by">VISUALS BY</span>
+        <span className="darwin-rg">DARWIN RG</span>
+      </div>
     </div>
   );
 }
